@@ -3,51 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>100 Aulas Prontas de Vôlei | Para Professores de Educação Física</title>
+  <title>100 Aulas de Vôlei Prontas | Professores de Vôlei</title>
 
   <!-- ============================================================
        META PIXEL DO FACEBOOK
-       Substitua SEU_ID_DO_PIXEL_AQUI pelo ID real do seu Pixel
+       Substitua SEU_ID_DO_PIXEL_AQUI pelo seu Pixel ID real
        ============================================================ -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SEU_ID_DO_PIXEL_AQUI'); /* ← TROQUE PELO SEU PIXEL ID */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'SEU_ID_DO_PIXEL_AQUI'); /* ← COLOQUE SEU PIXEL ID AQUI */
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=SEU_ID_DO_PIXEL_AQUI&ev=PageView&noscript=1"/>
-    <!-- ↑ TROQUE SEU_ID_DO_PIXEL_AQUI aqui também -->
+    <!-- ↑ Também troque o Pixel ID aqui -->
   </noscript>
-  <!-- ============================================================ -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Bebas Neue (headlines) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ============================
-       DESIGN TOKENS
-    ============================ */
+    /* ============================================================
+       CSS VARIABLES — Troque as cores aqui
+       ============================================================ */
     :root {
-      --bg:        #09090b;
-      --bg2:       #111113;
-      --bg3:       #18181b;
-      --border:    #27272a;
-      --yellow:    #FACC15;
-      --yellow-h:  #eab308;
-      --orange:    #f97316;
-      --white:     #fafafa;
-      --muted:     #a1a1aa;
-      --danger:    #ef4444;
-      --green:     #22c55e;
-      --radius:    12px;
+      --bg:        #09090b;      /* Fundo principal */
+      --bg2:       #111113;      /* Fundo de cards/seções alternadas */
+      --bg3:       #1a1a1d;      /* Cards internos */
+      --yellow:    #FACC15;      /* Cor dos CTAs e destaques */
+      --yellow-d:  #d4a90f;      /* Amarelo mais escuro (hover) */
+      --white:     #f5f5f5;
+      --muted:     #9ca3af;
+      --red:       #ef4444;
+      --border:    rgba(250,204,21,0.15);
+      --glow:      0 0 40px rgba(250,204,21,0.18);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,1071 +53,822 @@
     body {
       background: var(--bg);
       color: var(--white);
-      font-family: 'Barlow', sans-serif;
-      font-size: 17px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .headline {
-      font-family: 'Oswald', sans-serif;
-      line-height: 1.15;
-      letter-spacing: 0.01em;
-    }
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, .bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; line-height: 1.05; }
 
-    a { color: inherit; text-decoration: none; }
+    .highlight { color: var(--yellow); }
+    .muted     { color: var(--muted); }
+    strong, b  { color: var(--yellow); font-weight: 700; }
 
-    img { max-width: 100%; display: block; }
+    /* ── LAYOUT ── */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    section    { padding: 64px 0; position: relative; }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ============================
-       UTILITY
-    ============================ */
-    .yellow   { color: var(--yellow); }
-    .orange   { color: var(--orange); }
-    .muted    { color: var(--muted); }
-    .green    { color: var(--green); }
-    .danger   { color: var(--danger); }
-    .bold     { font-weight: 700; }
-    .upper    { text-transform: uppercase; }
-    .center   { text-align: center; }
-
-    /* ============================
-       CTA BUTTON
-    ============================ */
-    .btn-cta {
-      display: block;
-      width: 100%;
+    /* ── DIVIDER ── */
+    .divider {
+      width: 60px; height: 3px;
       background: var(--yellow);
-      color: #09090b;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-align: center;
-      padding: 18px 24px;
-      border-radius: var(--radius);
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 0 32px rgba(250,204,21,0.35);
-      line-height: 1.2;
+      margin: 16px 0 28px;
     }
-    .btn-cta:hover { background: var(--yellow-h); transform: translateY(-2px); }
-    .btn-cta small { display: block; font-family: 'Barlow', sans-serif; font-size: 0.8rem; font-weight: 600; text-transform: none; margin-top: 4px; opacity: 0.75; }
+    .divider.center { margin: 16px auto 28px; }
 
-    .btn-cta-sm {
+    /* ── CTA BUTTON ── */
+    .btn {
       display: inline-block;
       background: var(--yellow);
       color: #09090b;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 12px 28px;
-      border-radius: 8px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      padding: 18px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
       cursor: pointer;
-      transition: background 0.2s;
-      box-shadow: 0 0 18px rgba(250,204,21,0.25);
-    }
-    .btn-cta-sm:hover { background: var(--yellow-h); }
-
-    /* ============================
-       TOP BAR — urgência
-    ============================ */
-    /* === BLOCO: TOP BAR === */
-    .topbar {
-      background: var(--danger);
-      color: #fff;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(250,204,21,0.35);
       text-align: center;
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 10px 16px;
+      width: 100%;
     }
-    .topbar span { color: #FACC15; }
+    .btn:hover {
+      background: var(--yellow-d);
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(250,204,21,0.55);
+    }
+    .btn:active { transform: translateY(0); }
 
-    /* ============================
-       HERO
-    ============================ */
-    /* === BLOCO: HERO / PRIMEIRA DOBRA === */
-    .hero {
-      background: linear-gradient(175deg, #0f1218 0%, #09090b 60%);
-      padding: 48px 0 40px;
-      position: relative;
+    .btn-sm {
+      font-size: 1rem;
+      padding: 12px 28px;
+      width: auto;
+      border-radius: 4px;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      background: rgba(250,204,21,0.12);
+      border: 1px solid var(--border);
+      color: var(--yellow);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    /* ────────────────────────────────────────────────
+       SEÇÃO 1 — HERO
+    ──────────────────────────────────────────────── */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 80px 0 60px;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(250,204,21,0.07) 0%, transparent 70%),
+        var(--bg);
       overflow: hidden;
     }
-    .hero::before {
+
+    /* ── Imagem hero de fundo ── */
+    #hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      /* Volleyball court lines texture — subtle */
-      background-image:
-        linear-gradient(rgba(250,204,21,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(250,204,21,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
+      /* TROQUE A IMAGEM ABAIXO — foto de ação de vôlei indoor */
+      background: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=1400&q=90') center/cover no-repeat;
+      opacity: 0.13;
+      z-index: 0;
     }
 
-    .hero-eyebrow {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--orange);
-      margin-bottom: 12px;
-    }
+    #hero .container { position: relative; z-index: 1; }
 
-    .hero h1 {
-      font-size: clamp(2rem, 8vw, 3.2rem);
+    .hero-tag {
+      background: var(--red);
+      color: #fff;
+      font-size: 0.72rem;
       font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 18px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.5); }
+      50%       { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.8rem, 10vw, 5.2rem);
+      line-height: 1;
+      margin-bottom: 20px;
     }
 
     .hero-sub {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 3vw, 1.2rem);
       color: var(--muted);
       margin-bottom: 28px;
-      max-width: 520px;
+      max-width: 560px;
     }
 
-    /* Cover image block */
-    .hero-cover {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      margin-bottom: 32px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-    }
-    .hero-cover img {
-      width: 120px;
-      border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-      flex-shrink: 0;
-    }
-    .hero-cover-text h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--yellow);
-      margin-bottom: 6px;
-    }
-    .hero-cover-text p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* Bullets */
-    .bullets {
+    /* ── Bullets hero ── */
+    .hero-bullets {
       list-style: none;
-      margin: 0 0 28px;
+      margin-bottom: 36px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-    .bullets li {
+    .hero-bullets li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.02rem;
     }
-    .bullets li::before {
+    .hero-bullets li::before {
       content: '✓';
       color: var(--yellow);
-      font-weight: 900;
-      font-size: 1.1rem;
+      font-weight: 700;
       flex-shrink: 0;
       margin-top: 2px;
     }
 
-    /* Hero testimonial */
-    .hero-testimonial {
-      background: var(--bg3);
-      border-left: 3px solid var(--yellow);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 16px;
-      margin-top: 24px;
-    }
-    .hero-testimonial p { font-size: 0.95rem; font-style: italic; color: var(--muted); }
-    .hero-testimonial strong { color: var(--white); font-style: normal; }
-
-    /* ============================
-       SECTION BASE
-    ============================ */
-    section {
-      padding: 52px 0;
-    }
-    .section-alt { background: var(--bg2); }
-    .section-dark { background: #0c0c0e; }
-
-    .section-label {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--orange);
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    /* ============================
-       BLOCO DE DOR
-    ============================ */
-    /* === BLOCO: DOR === */
-    .pain-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin: 24px 0;
-    }
-    .pain-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 1rem;
-      padding: 14px 16px;
-      background: rgba(239,68,68,0.07);
-      border: 1px solid rgba(239,68,68,0.2);
-      border-radius: 8px;
-      line-height: 1.5;
-    }
-    .pain-list li .icon { font-size: 1.3rem; flex-shrink: 0; }
-
-    /* ============================
-       BLOCO TRANSFORMAÇÃO
-    ============================ */
-    /* === BLOCO: TRANSFORMAÇÃO / SOLUÇÃO === */
-    .transform-card {
-      background: linear-gradient(135deg, #1a1a0a, #0f0f0f);
-      border: 1px solid rgba(250,204,21,0.2);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      margin: 24px 0;
-    }
-    .transform-card h3 {
-      font-size: 1.3rem;
-      color: var(--yellow);
-      margin-bottom: 12px;
-    }
-
-    /* Volleyball image block */
-    /* === IMAGEM DE VÔLEI — Troque a URL pelo caminho da sua imagem === */
-    .volei-img-block {
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin: 24px 0;
-      aspect-ratio: 16/7;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      position: relative;
-    }
-    .volei-img-block img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    .volei-img-block .img-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(9,9,11,0.7) 0%, transparent 60%);
-    }
-
-    /* ============================
-       APRESENTAÇÃO DO PRODUTO
-    ============================ */
-    /* === BLOCO: PRODUTO + BÔNUS === */
-    .product-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 24px 0;
-    }
-    @media (max-width: 520px) { .product-grid { grid-template-columns: 1fr; } }
-
-    .product-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px 18px;
-    }
-    .product-card .level-badge {
-      display: inline-block;
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 3px 10px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-    }
-    .badge-green  { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
-    .badge-yellow { background: rgba(250,204,21,0.15); color: var(--yellow); border: 1px solid rgba(250,204,21,0.3); }
-    .badge-orange { background: rgba(249,115,22,0.15); color: var(--orange); border: 1px solid rgba(249,115,22,0.3); }
-    .badge-blue   { background: rgba(96,165,250,0.15); color: #60a5fa; border: 1px solid rgba(96,165,250,0.3); }
-
-    .product-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-    .product-card p  { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
-
-    /* Mockup visual */
-    .mockup-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 28px 0;
-      flex-wrap: wrap;
-    }
-    .mockup-item {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 14px;
-      text-align: center;
-      width: 130px;
-    }
-    .mockup-item .mockup-icon { font-size: 2.2rem; margin-bottom: 8px; }
-    .mockup-item p { font-size: 0.8rem; color: var(--muted); }
-
-    /* Bonus */
-    .bonus-box {
-      background: linear-gradient(135deg, #0a0f0a, #0f0f0f);
-      border: 1px dashed rgba(34,197,94,0.4);
-      border-radius: var(--radius);
-      padding: 20px 18px;
-      margin-top: 20px;
-    }
-    .bonus-box h4 { color: var(--green); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .bonus-box p  { font-size: 0.9rem; color: var(--muted); }
-
-    /* ============================
-       QUEBRA DE OBJEÇÃO / GARANTIA
-    ============================ */
-    /* === BLOCO: GARANTIA === */
-    .guarantee-box {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin: 24px 0;
-    }
-    .guarantee-box .g-icon { font-size: 3rem; flex-shrink: 0; }
-    .guarantee-box h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-    .guarantee-box p  { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
-
-    .objection-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 20px 0;
-    }
-    .objection-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-    .objection-list li::before {
-      content: '🛡️';
-      flex-shrink: 0;
-    }
-
-    /* ============================
-       OFERTA / PREÇO
-    ============================ */
-    /* === BLOCO: OFERTA E PREÇO === */
-    .price-section {
-      background: linear-gradient(160deg, #111107 0%, #09090b 100%);
-      padding: 60px 0;
-      position: relative;
-    }
-    .price-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(250,204,21,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .price-box {
-      background: var(--bg3);
-      border: 2px solid rgba(250,204,21,0.3);
-      border-radius: 16px;
-      padding: 32px 28px;
-      text-align: center;
+    /* ── Preço hero ── */
+    .hero-price-wrap {
+      margin-bottom: 28px;
     }
     .price-from {
-      font-size: 1rem;
+      font-size: 0.88rem;
       color: var(--muted);
       text-decoration: line-through;
-      margin-bottom: 4px;
     }
-    .price-real {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(3rem, 12vw, 5rem);
-      font-weight: 700;
+    .price-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.4rem;
       color: var(--yellow);
       line-height: 1;
-      margin-bottom: 4px;
     }
-    .price-real sup { font-size: 0.45em; vertical-align: super; }
-    .price-label {
-      font-size: 0.85rem;
+    .price-note {
+      font-size: 0.78rem;
       color: var(--muted);
-      margin-bottom: 28px;
+      margin-top: 4px;
     }
 
-    .perks {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 28px;
-      text-align: left;
-    }
-    .perks li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.95rem;
-    }
-    .perks li::before { content: '✅'; font-size: 1rem; }
-
-    /* ============================
-       ESCASSEZ / URGÊNCIA
-    ============================ */
-    /* === BLOCO: ESCASSEZ / URGÊNCIA === */
-    .urgency-bar {
-      background: var(--danger);
-      padding: 24px 0;
-      text-align: center;
-    }
-    .urgency-bar h3 {
-      font-family: 'Oswald', sans-serif;
-      font-size: clamp(1rem, 4vw, 1.4rem);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .urgency-bar p { font-size: 0.9rem; margin-top: 6px; opacity: 0.85; }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 16px 0 8px;
-    }
-    .countdown-unit {
-      background: rgba(0,0,0,0.3);
-      border-radius: 8px;
-      padding: 10px 14px;
-      min-width: 64px;
-      text-align: center;
-    }
-    .countdown-unit .num {
-      font-family: 'Oswald', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--yellow);
-    }
-    .countdown-unit .lbl { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; }
-
-    /* ============================
-       FOOTER
-    ============================ */
-    footer {
-      background: #050505;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 28px 20px;
-      color: var(--muted);
-      font-size: 0.8rem;
-      line-height: 1.8;
-    }
-    footer a { color: var(--muted); text-decoration: underline; }
-
-    /* ============================
-       DIVIDER
-    ============================ */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0;
-    }
-
-    /* ============================
-       SOCIAL PROOF NUMBERS
-    ============================ */
-    .stats-row {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 24px 0;
-    }
-    .stat-item {
-      text-align: center;
+    /* ── Depoimento hero ── */
+    .hero-depo {
+      margin-top: 36px;
       background: var(--bg3);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 16px 20px;
-      flex: 1;
-      min-width: 100px;
-    }
-    .stat-item .num {
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--yellow);
-    }
-    .stat-item .lbl { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
-
-    /* ============================
-       DEPOIMENTOS
-    ============================ */
-    .testimonials {
+      padding: 18px 20px;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .hero-depo img {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid var(--yellow);
+      /* TROQUE a foto — professor de vôlei real */
+    }
+    .hero-depo-text { font-size: 0.9rem; color: var(--muted); font-style: italic; line-height: 1.5; }
+    .hero-depo-name { font-size: 0.78rem; color: var(--yellow); font-weight: 700; margin-top: 6px; font-style: normal; }
+
+    /* ── Produto mockup ── */
+    .hero-mockup {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .hero-mockup img {
+      max-width: 340px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 60px rgba(250,204,21,0.2);
+      border: 1px solid var(--border);
+      /* TROQUE pela capa real do produto */
+    }
+
+    /* ────────────────────────────────────────────────
+       SEÇÃO 2 — BLOCO DE DOR
+    ──────────────────────────────────────────────── */
+    #dor {
+      background: var(--bg2);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    #dor h2 {
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      margin-bottom: 8px;
+    }
+    .dor-text {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    /* ────────────────────────────────────────────────
+       SEÇÃO 3 — TRANSFORMAÇÃO
+    ──────────────────────────────────────────────── */
+    #transformacao h2 { font-size: clamp(2rem, 7vw, 3.2rem); margin-bottom: 8px; }
+    .transform-text { font-size: 1.05rem; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
+
+    /* Imagem de quadra / professor feliz */
+    .transform-img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 280px;
+      margin-bottom: 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--glow);
+      /* TROQUE pela sua imagem de contexto */
+    }
+
+    /* ────────────────────────────────────────────────
+       SEÇÃO 4 — PRODUTO + BÔNUS
+    ──────────────────────────────────────────────── */
+    #produto {
+      background: var(--bg2);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    #produto h2 { font-size: clamp(2rem, 7vw, 3.2rem); margin-bottom: 8px; }
+
+    .niveis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
       margin: 28px 0;
     }
-    .testimonial-card {
+    .nivel-card {
       background: var(--bg3);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
+      border-radius: 10px;
+      padding: 20px 22px;
+      transition: border-color 0.2s;
     }
-    .testimonial-card .stars { color: var(--yellow); font-size: 1rem; margin-bottom: 8px; }
-    .testimonial-card p { font-size: 0.95rem; font-style: italic; color: var(--muted); line-height: 1.6; }
-    .testimonial-card .author { margin-top: 10px; font-size: 0.85rem; font-weight: 700; color: var(--white); }
+    .nivel-card:hover { border-color: var(--yellow); }
+    .nivel-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: var(--yellow);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .nivel-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
-    /* ============================
-       RESPONSIVE TWEAKS
-    ============================ */
-    @media (max-width: 480px) {
-      .hero-cover { flex-direction: column; }
-      .hero-cover img { width: 100px; }
-      .guarantee-box { flex-direction: column; }
+    .mockup-produto {
+      text-align: center;
+      margin: 32px 0;
+    }
+    .mockup-produto img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 60px rgba(250,204,21,0.22);
+      border: 1px solid var(--border);
+      /* TROQUE pela capa/mockup do produto */
+    }
+
+    /* ────────────────────────────────────────────────
+       SEÇÃO 5 — OBJEÇÃO / GARANTIA
+    ──────────────────────────────────────────────── */
+    #garantia h2 { font-size: clamp(2rem, 7vw, 3rem); margin-bottom: 8px; }
+    .garantia-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .garantia-item {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .garantia-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .garantia-item h3 { font-size: 1.02rem; margin-bottom: 4px; color: var(--white); }
+    .garantia-item p  { font-size: 0.88rem; color: var(--muted); }
+
+    .garantia-7dias {
+      background: rgba(250,204,21,0.06);
+      border: 1px solid var(--yellow);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 28px;
+    }
+    .garantia-7dias .g-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .garantia-7dias p { font-size: 0.95rem; color: var(--muted); margin-top: 8px; max-width: 380px; margin-left: auto; margin-right: auto; }
+
+    /* ────────────────────────────────────────────────
+       SEÇÃO 6 — OFERTA / PREÇO
+    ──────────────────────────────────────────────── */
+    #oferta {
+      background: var(--bg2);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+    }
+    #oferta h2 { font-size: clamp(2rem, 7vw, 3.4rem); margin-bottom: 8px; }
+
+    .oferta-card {
+      background: var(--bg3);
+      border: 2px solid var(--yellow);
+      border-radius: 16px;
+      padding: 36px 28px;
+      max-width: 420px;
+      margin: 32px auto 0;
+      box-shadow: var(--glow);
+    }
+    .oferta-de { font-size: 0.9rem; color: var(--muted); }
+    .oferta-de span { text-decoration: line-through; }
+    .oferta-preco {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 14vw, 6rem);
+      color: var(--yellow);
+      line-height: 1;
+      margin: 8px 0;
+    }
+    .oferta-nota { font-size: 0.82rem; color: var(--muted); margin-bottom: 28px; }
+    .oferta-inclui { list-style: none; text-align: left; margin-bottom: 28px; display: flex; flex-direction: column; gap: 8px; }
+    .oferta-inclui li { display: flex; gap: 10px; font-size: 0.93rem; color: var(--muted); }
+    .oferta-inclui li::before { content: '✅'; flex-shrink: 0; }
+
+    /* ────────────────────────────────────────────────
+       DEPOIMENTOS EXTRAS
+    ──────────────────────────────────────────────── */
+    #depoimentos h2 { font-size: clamp(2rem, 7vw, 3.2rem); margin-bottom: 8px; text-align: center; }
+    .depo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .depo-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 22px;
+    }
+    .depo-stars { color: var(--yellow); font-size: 0.85rem; margin-bottom: 10px; }
+    .depo-quote { font-size: 0.93rem; color: var(--muted); line-height: 1.6; font-style: italic; margin-bottom: 14px; }
+    .depo-author { display: flex; align-items: center; gap: 10px; }
+    .depo-author img {
+      width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+      border: 1.5px solid var(--yellow);
+      /* TROQUE pela foto real do professor */
+    }
+    .depo-name  { font-size: 0.82rem; font-weight: 700; color: var(--white); }
+    .depo-role  { font-size: 0.72rem; color: var(--muted); }
+
+    /* ────────────────────────────────────────────────
+       FOOTER
+    ──────────────────────────────────────────────── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    footer a { color: var(--muted); text-decoration: underline; }
+
+    /* ────────────────────────────────────────────────
+       STICKY CTA MOBILE
+    ──────────────────────────────────────────────── */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(9,9,11,0.95);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding: 12px 20px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .sticky-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--yellow);
+      white-space: nowrap;
+    }
+    .sticky-bar .btn { padding: 14px 28px; font-size: 1.1rem; width: auto; }
+
+    /* ── Tablet / Desktop ── */
+    @media (min-width: 640px) {
+      .niveis-grid     { grid-template-columns: repeat(3,1fr); }
+      .garantia-grid   { grid-template-columns: repeat(2,1fr); }
+      .depo-grid       { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (min-width: 768px) {
+      .sticky-bar { display: none; } /* Oculta sticky em desktop */
     }
   </style>
 </head>
 <body>
 
 <!-- ============================================================
-     BLOCO 0: TOP BAR — URGÊNCIA
-============================================================ -->
-<div class="topbar">
-  ⚡ Promoção relâmpago: <span>R$14,90 somente até domingo à meia-noite</span> — depois volta para R$49,90
+     BARRA STICKY — aparece apenas no mobile
+     Troque preço e link conforme necessário
+     ============================================================ -->
+<div class="sticky-bar">
+  <div>
+    <div style="font-size:0.72rem;color:var(--muted)">apenas</div>
+    <div class="sticky-price">R$14,90</div>
+  </div>
+  <!-- CTA BOTÃO — dispara Pixel ao clicar -->
+  <a class="btn" href="https://pay.cakto.com.br/vqca5rh_767670"
+     onclick="fbq('track','InitiateCheckout')" target="_blank">
+    Comprar Agora →
+  </a>
 </div>
 
-
 <!-- ============================================================
-     BLOCO 1: HERO / PRIMEIRA DOBRA
-============================================================ -->
-<section class="hero">
+     SEÇÃO 1 — HERO / PRIMEIRA DOBRA
+     Troque: imagem de fundo (::before background-image no CSS),
+     foto do depoimento, mockup do produto
+     ============================================================ -->
+<section id="hero">
   <div class="container">
 
-    <p class="hero-eyebrow">Para professores de Educação Física</p>
+    <span class="hero-tag">🏐 Exclusivo para Professores de Vôlei</span>
 
-    <h1>
-      Pare de perder tempo criando<br>
-      aula do <span class="yellow">zero</span> toda semana
+    <h1 class="hero-h1">
+      CHEGA DE<br>
+      <span class="highlight">PERDER HORAS</span><br>
+      PLANEJANDO AULA.
     </h1>
 
     <p class="hero-sub">
-      Tenha <strong>100 planos de aula completos de vôlei</strong> com objetivo, passo a passo e lista de materiais — prontos para usar amanhã.
+      <strong>100 aulas de vôlei prontas</strong>, organizadas por nível, passo a passo — chegue na quadra com segurança amanhã mesmo.
     </p>
 
-    <!-- CAPA DO PRODUTO -->
-    <!-- === IMAGEM: Capa do produto. Substitua "capa_produto_1.png" pelo caminho correto se necessário === -->
-    <div class="hero-cover">
-      <img src="capa_produto_1.png" alt="100 Aulas Prontas de Vôlei — capa do produto" />
-      <div class="hero-cover-text">
-        <h3>100 Aulas Prontas de Vôlei</h3>
-        <p>Planejamento rápido e organizado para professores de Educação Física. Acesso imediato após o pagamento.</p>
-      </div>
-    </div>
-
-    <ul class="bullets">
-      <li><strong>100 aulas</strong> estruturadas do zero ao avançado</li>
-      <li>Objetivo, passo a passo e materiais <strong>em cada aula</strong></li>
-      <li>Funciona para qualquer turma — <strong>escola, clube ou academia</strong></li>
-      <li>Acesso imediato em PDF, pronto para <strong>usar ainda hoje</strong></li>
+    <ul class="hero-bullets">
+      <li>Aulas prontas: <strong>chegue, aplique, destaque.</strong></li>
+      <li>Do iniciante ao avançado — <strong>sem improvisar.</strong></li>
+      <li>100 aulas estruturadas em <strong>PDF + bônus.</strong></li>
+      <li>Acesso imediato por <strong>R$14,90 hoje.</strong></li>
     </ul>
 
-    <!-- CTA 1 -->
-    <a href="https://pay.cakto.com.br/vqca5rh_767670"
-       onclick="fbq('track','InitiateCheckout')"
-       class="btn-cta">
-      🏐 Quero minhas 100 aulas agora!
-      <small>Acesso imediato por apenas R$14,90</small>
+    <!-- Preço -->
+    <div class="hero-price-wrap">
+      <div class="price-from">De R$49,90</div>
+      <div class="price-main">R$14,90</div>
+      <div class="price-note">Pagamento único · Acesso imediato · Sem assinatura</div>
+    </div>
+
+    <!-- CTA PRINCIPAL — dispara Pixel -->
+    <a class="btn" href="https://pay.cakto.com.br/vqca5rh_767670"
+       onclick="fbq('track','InitiateCheckout')" target="_blank">
+      🏐 QUERO MINHAS 100 AULAS AGORA
     </a>
 
-    <!-- Depoimento rápido -->
-    <div class="hero-testimonial">
-      <p>
-        <strong>"Reduzi meu tempo de planejamento semanal à metade.</strong>
-        As aulas já chegam com tudo pronto — só aplicar com a turma."
-      </p>
-      <strong style="display:block; margin-top:8px; font-size:0.85rem; color:#71717a;">— Fernanda M., professora de EF há 8 anos</strong>
+    <!-- Prova social rápida -->
+    <p style="text-align:center;font-size:0.78rem;color:var(--muted);margin-top:12px;">
+      🔒 Compra segura · 🎯 +2.300 professores já usam · ⚡ Acesso imediato
+    </p>
+
+    <!-- Depoimento herói -->
+    <div class="hero-depo">
+      <!-- Foto do professor depoimento -->
+      <img src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?w=120&h=120&fit=crop&q=85" alt="Professor Marcos" />
+      <div>
+        <p class="hero-depo-text">
+          "Eu chegava às aulas sem saber o que fazer. Hoje chego com <strong>tudo estruturado</strong> e meus alunos perceberam a diferença na primeira semana."
+        </p>
+        <p class="hero-depo-name">— Marcos T., professor de vôlei há 7 anos · São Paulo/SP</p>
+      </div>
+    </div>
+
+    <!-- Mockup do produto -->
+    <div class="hero-mockup">
+      <!-- Imagem principal do produto — troque pela capa real -->
+      <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=700&h=460&fit=crop&q=90"
+           alt="100 Aulas de Vôlei Prontas" />
     </div>
 
   </div>
 </section>
-<div class="divider"></div>
-
 
 <!-- ============================================================
-     BLOCO 2: SOCIAL PROOF
-============================================================ -->
-<section class="section-alt">
-  <div class="container center">
-    <p class="section-label">Quem já usa não abre mão</p>
-    <div class="stats-row">
-      <div class="stat-item">
-        <div class="num">+2.300</div>
-        <div class="lbl">Professores ativos</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">4.9★</div>
-        <div class="lbl">Avaliação média</div>
-      </div>
-      <div class="stat-item">
-        <div class="num">100%</div>
-        <div class="lbl">Digital e imediato</div>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-
-
-<!-- ============================================================
-     BLOCO 3: DOR
-============================================================ -->
-<section class="section-dark">
+     SEÇÃO 2 — BLOCO DE DOR
+     Troque os textos de acordo com sua audiência
+     ============================================================ -->
+<section id="dor">
   <div class="container">
-    <p class="section-label">Reconhece essa situação?</p>
-    <h2 class="section-title">
-      Você já chegou num domingo à noite <span class="yellow">sem nada pronto</span> para a semana?
-    </h2>
+    <span class="badge">A verdade que ninguém fala</span>
+    <h2>VOCÊ AINDA <span class="highlight">PERDE HORAS</span><br>TODA SEMANA?</h2>
+    <div class="divider"></div>
 
-    <p style="color: var(--muted); margin-bottom: 20px;">
-      Ser professor de Educação Física é muito mais do que dar aula. É planejar, organizar,
-      adaptar para cada turma — <strong>às vezes do zero, toda semana</strong>. E quando o tempo aperta,
-      o estresse vem junto.
+    <p class="dor-text">
+      Todo domingo à noite você tenta montar uma aula do zero. <strong>Perde horas</strong> no YouTube, em grupos do WhatsApp, tentando lembrar de exercícios que funcionaram semanas atrás. No dia seguinte você chega na quadra com <strong>insegurança</strong>, improvisa demais e sente que seus alunos percebem.
+    </p>
+    <p class="dor-text">
+      A turma cresce, as exigências aumentam — e você fica preso em um <strong>ciclo de retrabalho</strong> que drena sua energia. Enquanto isso, professores que se organizam entregam <strong>resultados melhores</strong>, fidelizam alunos e cobram mais.
+    </p>
+    <p class="dor-text">
+      Você não precisa de mais tempo. Você precisa do <strong>planejamento pronto.</strong>
     </p>
 
-    <ul class="pain-list">
-      <li>
-        <span class="icon">😤</span>
-        <span>Horas perdidas montando planos que <strong>ninguém vai valorizar</strong> — mas que você precisa entregar</span>
-      </li>
-      <li>
-        <span class="icon">😰</span>
-        <span>Aquela <strong>insegurança</strong> de chegar na quadra sem saber se a aula vai funcionar</span>
-      </li>
-      <li>
-        <span class="icon">😔</span>
-        <span><strong>Retrabalho constante</strong>: adaptar, refazer, procurar atividade no Google às 23h</span>
-      </li>
-      <li>
-        <span class="icon">⏰</span>
-        <span>Tempo que você deveria usar descansando — <strong>jogado fora em burocracia</strong></span>
-      </li>
-    </ul>
-
-    <p style="font-size: 1rem; color: var(--muted);">
-      Isso não é falta de competência. É falta de um sistema pronto. <strong>E agora você tem.</strong>
-    </p>
-
-    <br>
-    <!-- CTA 2 -->
-    <a href="https://pay.cakto.com.br/vqca5rh_767670"
-       onclick="fbq('track','InitiateCheckout')"
-       class="btn-cta-sm">
+    <!-- Micro CTA -->
+    <a class="btn btn-sm" href="https://pay.cakto.com.br/vqca5rh_767670"
+       onclick="fbq('track','InitiateCheckout')" target="_blank"
+       style="width:auto; display:inline-block;">
       Quero resolver isso agora →
     </a>
-
   </div>
 </section>
-<div class="divider"></div>
-
 
 <!-- ============================================================
-     BLOCO 4: TRANSFORMAÇÃO / SOLUÇÃO
-============================================================ -->
-<section>
+     SEÇÃO 3 — TRANSFORMAÇÃO / SOLUÇÃO
+     Troque a imagem transform-img
+     ============================================================ -->
+<section id="transformacao">
   <div class="container">
-    <p class="section-label">A virada de chave</p>
-    <h2 class="section-title">
-      E se segunda-feira você chegasse na escola <span class="yellow">100% preparado</span>?
-    </h2>
+    <span class="badge">A virada de chave</span>
+    <h2>IMAGINE <span class="highlight">CHEGAR NA QUADRA</span><br>COM TUDO PRONTO.</h2>
+    <div class="divider"></div>
 
-    <!-- IMAGEM DE VÔLEI 1 -->
-    <!-- === IMAGEM: Foto de aula de vôlei ou jogo. Substitua a URL abaixo por uma imagem real. === -->
-    <div class="volei-img-block">
-      <img
-        src="https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=800&q=80"
-        alt="Professora de vôlei orientando alunos na quadra"
-        loading="lazy"
-      />
-      <div class="img-overlay"></div>
-    </div>
+    <!-- Foto de vôlei em quadra: professor + alunos treinando -->
+    <img class="transform-img"
+         src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=400&fit=crop&q=90"
+         alt="Professor de vôlei com alunos na quadra" />
 
-    <div class="transform-card">
-      <h3>📋 Imagine abrir o PDF e já ter tudo ali:</h3>
-      <ul class="bullets" style="margin-bottom:0;">
-        <li>Objetivo claro da aula — <strong>sem precisar pensar do zero</strong></li>
-        <li>Atividades passo a passo, descritas em detalhes</li>
-        <li>Lista de materiais — sem surpresa na hora H</li>
-        <li>Progressão lógica do simples ao complexo</li>
-      </ul>
-    </div>
-
-    <p style="color:var(--muted); margin: 16px 0;">
-      Foi exatamente assim que a professora <strong>Camila Torres</strong>, de São Paulo, passou a usar o material:
-      <em>"Antes eu levava 2 horas planejando a semana. Agora abro o PDF, marco as aulas, e já tô pronta em 15 minutos."</em>
+    <p class="transform-text">
+      Com as <strong>100 aulas prontas</strong>, você abre o documento, vê o objetivo da aula, o aquecimento, os exercícios por fase e o encerramento. Cada aula foi pensada do zero até o final, com progressões e linguagem simples.
+    </p>
+    <p class="transform-text">
+      Você para de <strong>improvisar</strong>. Seus alunos sentem a diferença. Você ganha <strong>confiança e autoridade</strong> dentro da quadra — e mais tempo para viver.
     </p>
 
-    <br>
-    <!-- CTA 3 -->
-    <a href="https://pay.cakto.com.br/vqca5rh_767670"
-       onclick="fbq('track','InitiateCheckout')"
-       class="btn-cta">
-      🏐 Garantir meu acesso agora por R$14,90
-      <small>Pagamento único · Sem mensalidade · Acesso imediato</small>
+    <!-- CTA -->
+    <a class="btn" href="https://pay.cakto.com.br/vqca5rh_767670"
+       onclick="fbq('track','InitiateCheckout')" target="_blank">
+      LIBERAR MINHAS AULAS AGORA — R$14,90
     </a>
-
   </div>
 </section>
-<div class="divider"></div>
-
 
 <!-- ============================================================
-     BLOCO 5: APRESENTAÇÃO DO PRODUTO + SEGMENTOS + BÔNUS
-============================================================ -->
-<section class="section-alt">
+     SEÇÃO 4 — PRODUTO + MICRO-SEGMENTOS + BÔNUS
+     ============================================================ -->
+<section id="produto">
   <div class="container">
-    <p class="section-label">O que você recebe</p>
-    <h2 class="section-title">
-      <span class="yellow">100 aulas prontas</span> — do iniciante ao avançado
-    </h2>
+    <span class="badge">O que está incluído</span>
+    <h2>100 AULAS PRONTAS EM<br><span class="highlight">3 NÍVEIS DE ENSINO</span></h2>
+    <div class="divider"></div>
 
-    <p style="color:var(--muted); margin-bottom:24px;">
-      O material cobre todos os níveis com planejamento completo, para que você consiga atender
-      <strong>qualquer turma</strong> — da introdução ao esporte até treinos táticos avançados.
+    <div class="niveis-grid">
+      <div class="nivel-card">
+        <div class="nivel-title">🟢 Iniciante</div>
+        <p class="nivel-desc">Fundamentos, postura, saque por baixo, recepção básica. Ideal para alunos que nunca tocaram numa bola.</p>
+      </div>
+      <div class="nivel-card">
+        <div class="nivel-title">🟡 Intermediário</div>
+        <p class="nivel-desc">Levantamento, ataque, bloqueio, sistemas táticos simples e progressão de jogos.</p>
+      </div>
+      <div class="nivel-card">
+        <div class="nivel-title">🔴 Avançado</div>
+        <p class="nivel-desc">Táticas coletivas, sistemas de defesa, serviço flutuante, tomada de decisão em jogo real.</p>
+      </div>
+    </div>
+
+    <!-- Mockup produto -->
+    <div class="mockup-produto">
+      <!-- Foto de jogo de vôlei indoor — troque pela capa real do PDF -->
+      <img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=680&h=420&fit=crop&q=90"
+           alt="Aulas de Vôlei — prévia do conteúdo" />
+    </div>
+
+    <!-- CTA -->
+    <a class="btn" href="https://pay.cakto.com.br/vqca5rh_767670"
+       onclick="fbq('track','InitiateCheckout')" target="_blank">
+      🏐 QUERO ACESSAR AGORA POR R$14,90
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO — DEPOIMENTOS
+     TROQUE as fotos por fotos reais de professores
+     ============================================================ -->
+<section id="depoimentos">
+  <div class="container">
+    <span class="badge" style="display:block;text-align:center;width:fit-content;margin:0 auto 20px;">O que dizem os professores</span>
+    <h2>QUEM JÁ USA, <span class="highlight">NÃO ABRE MÃO.</span></h2>
+    <div class="divider center"></div>
+
+    <div class="depo-grid">
+
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-quote">"Antes eu ficava perdido nas aulas. Agora tenho um roteiro claro. <strong>Meus alunos evoluíram muito mais rápido</strong> e eu parei de passar sufoco na quadra."</p>
+        <div class="depo-author">
+          <!-- Foto professor 1 — troque pela foto real -->
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&q=85" alt="Marcos M." />
+          <div>
+            <div class="depo-name">Rafael M.</div>
+            <div class="depo-role">Professor de vôlei · Curitiba/PR</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-quote">"Por R$14,90 achei que ia ser uma coisa básica. Fiquei <strong>impressionada com a qualidade.</strong> São aulas pensadas de verdade, com progressão real."</p>
+        <div class="depo-author">
+          <!-- Foto professora 2 — troque pela foto real -->
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=85" alt="Camila S." />
+          <div>
+            <div class="depo-name">Camila S.</div>
+            <div class="depo-role">Professora de EF · Florianópolis/SC</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-quote">"Trabalho com turmas de 3 níveis diferentes. Esse material <strong>salvou meu planejamento do semestre inteiro.</strong> Vale muito mais do que o preço."</p>
+        <div class="depo-author">
+          <!-- Foto professor 3 — troque pela foto real -->
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&q=85" alt="Thiago A." />
+          <div>
+            <div class="depo-name">Thiago A.</div>
+            <div class="depo-role">Professor de vôlei · Belo Horizonte/MG</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-quote">"Comecei a usar na primeira semana e já vi resultado. <strong>Nunca mais cheguei na quadra sem saber o que fazer.</strong> Clareza total em cada aula."</p>
+        <div class="depo-author">
+          <!-- Foto professora 4 — troque pela foto real -->
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=85" alt="Ana P." />
+          <div>
+            <div class="depo-name">Ana P.</div>
+            <div class="depo-role">Professora esportiva · Recife/PE</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 5 — OBJEÇÃO / GARANTIA
+     ============================================================ -->
+<section id="garantia">
+  <div class="container">
+    <span class="badge">Sem risco nenhum</span>
+    <h2>FUNCIONA PARA<br><span class="highlight">QUALQUER TURMA.</span></h2>
+    <div class="divider"></div>
+
+    <div class="garantia-grid">
+      <div class="garantia-item">
+        <div class="garantia-icon">🏫</div>
+        <div>
+          <h3>Escola, clube ou projeto social</h3>
+          <p>As aulas foram pensadas para <strong>qualquer contexto</strong> — academia, escola pública, projeto social ou clube privado.</p>
+        </div>
+      </div>
+      <div class="garantia-item">
+        <div class="garantia-icon">👶</div>
+        <div>
+          <h3>Qualquer faixa etária</h3>
+          <p>Crianças, adolescentes ou adultos. Cada nível tem aulas <strong>adaptadas à realidade da turma.</strong></p>
+        </div>
+      </div>
+      <div class="garantia-item">
+        <div class="garantia-icon">📱</div>
+        <div>
+          <h3>Acesso em qualquer dispositivo</h3>
+          <p>PDF leve, abre no celular. <strong>Sem login, sem app</strong> — baixa e usa agora.</p>
+        </div>
+      </div>
+      <div class="garantia-item">
+        <div class="garantia-icon">🔄</div>
+        <div>
+          <h3>Funciona para quem está começando</h3>
+          <p>Professor novo ou veterano, o material é <strong>direto ao ponto</strong> e fácil de aplicar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garantia 7 dias -->
+    <div class="garantia-7dias">
+      <div class="g-number">7</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;">DIAS DE GARANTIA TOTAL</h3>
+      <p>Se você não ficar satisfeito por <strong>qualquer motivo</strong>, basta enviar um e-mail e <strong>devolvemos 100% do valor</strong> — sem perguntas, sem burocracia.</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:32px">
+      <a class="btn" href="https://pay.cakto.com.br/vqca5rh_767670"
+         onclick="fbq('track','InitiateCheckout')" target="_blank">
+        GARANTIR MINHA CÓPIA SEM RISCO
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SEÇÃO 6 — OFERTA / PREÇO
+     ============================================================ -->
+<section id="oferta">
+  <div class="container">
+    <span class="badge" style="display:inline-block">Oferta especial</span>
+    <h2>TUDO ISSO POR<br><span class="highlight">R$14,90?</span><br>SIM.</h2>
+    <div class="divider center"></div>
+
+    <p style="color:var(--muted);max-width:480px;margin:0 auto 8px;">
+      Quanto vale <strong>nunca mais perder um domingo</strong> planejando aula? Quanto vale chegar na quadra com <strong>segurança e autoridade</strong>?
     </p>
 
-    <div class="product-grid">
-      <div class="product-card">
-        <span class="level-badge badge-green">🟢 Iniciante</span>
-        <h4>Fundamentos do Vôlei</h4>
-        <p>Manchete, toque, postura básica, regras e primeiros jogos adaptados. Ideal para alunos sem experiência.</p>
-      </div>
-      <div class="product-card">
-        <span class="level-badge badge-yellow">🟡 Intermediário</span>
-        <h4>Técnica e Dinâmica</h4>
-        <p>Saque, posicionamento em quadra, transição defesa-ataque e situações de jogo com contexto real.</p>
-      </div>
-      <div class="product-card">
-        <span class="level-badge badge-orange">🟠 Avançado</span>
-        <h4>Tática e Competição</h4>
-        <p>Sistemas de jogo, rotação, análise de adversário e situações competitivas de alto rendimento.</p>
-      </div>
-      <div class="product-card">
-        <span class="level-badge badge-blue">🔵 Especial</span>
-        <h4>Atividades Recreativas</h4>
-        <p>Jogos temáticos, variações lúdicas e aulas especiais para eventos, datas comemorativas e integração.</p>
-      </div>
-    </div>
+    <div class="oferta-card">
+      <div class="oferta-de">De <span>R$49,90</span></div>
+      <div class="oferta-preco">R$14,90</div>
+      <div class="oferta-nota">Pagamento único · Sem mensalidade · Acesso vitalício</div>
 
-    <!-- Mockup visual -->
-    <div class="mockup-wrap">
-      <div class="mockup-item">
-        <div class="mockup-icon">📄</div>
-        <p>100 planos em PDF</p>
-      </div>
-      <div class="mockup-item">
-        <div class="mockup-icon">🎯</div>
-        <p>Objetivo por aula</p>
-      </div>
-      <div class="mockup-item">
-        <div class="mockup-icon">📋</div>
-        <p>Lista de materiais</p>
-      </div>
-      <div class="mockup-item">
-        <div class="mockup-icon">📱</div>
-        <p>Mobile-friendly</p>
-      </div>
-    </div>
-
-    <!-- BÔNUS -->
-    <div class="bonus-box">
-      <h4>🎁 BÔNUS GRÁTIS: Mini Guia de Avaliação em Vôlei (PDF)</h4>
-      <p>
-        Incluso no seu acesso: um checklist prático para avaliar o desempenho dos alunos por nível —
-        <strong>sem precisar criar do zero</strong>. Valor individual R$19,90, <strong style="color:var(--green);">grátis para você hoje.</strong>
-      </p>
-    </div>
-
-    <br>
-    <!-- CTA 4 -->
-    <a href="https://pay.cakto.com.br/vqca5rh_767670"
-       onclick="fbq('track','InitiateCheckout')"
-       class="btn-cta">
-      Quero tudo isso por R$14,90 →
-      <small>Produto digital · Acesso imediato após pagamento</small>
-    </a>
-
-  </div>
-</section>
-<div class="divider"></div>
-
-
-<!-- ============================================================
-     BLOCO 6: DEPOIMENTOS
-============================================================ -->
-<section class="section-dark">
-  <div class="container">
-    <p class="section-label">Quem já testou fala por si</p>
-    <h2 class="section-title">Professores reais. Resultados reais.</h2>
-
-    <!-- IMAGEM DE VÔLEI 2 -->
-    <!-- === IMAGEM: Foto de vôlei em quadra / alunos jogando. Substitua a URL abaixo. === -->
-    <div class="volei-img-block" style="margin-bottom:28px;">
-      <img
-        src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80"
-        alt="Alunos jogando vôlei em aula de educação física"
-        loading="lazy"
-      />
-      <div class="img-overlay"></div>
-    </div>
-
-    <div class="testimonials">
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"Comprei com desconfiança por ser barato. Me arrependi de <strong>não ter comprado antes</strong>. Material completo, profissional e muito bem organizado."</p>
-        <div class="author">— Ricardo A., professor municipal – MG</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"Trabalho com ensino médio e achei que seria genérico. Me surpreendi: as aulas avançadas têm <strong>profundidade tática real</strong>. Recomendo sem hesitar."</p>
-        <div class="author">— Juliana P., coordenadora de EF – SP</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <p>"Eu uso como base e adapto para minha realidade. <strong>Economizo horas todo mês</strong>. Melhor investimento que fiz esse ano."</p>
-        <div class="author">— Thiago S., professor de clube esportivo – RS</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<div class="divider"></div>
-
-
-<!-- ============================================================
-     BLOCO 7: QUEBRA DE OBJEÇÃO / GARANTIA
-============================================================ -->
-<section>
-  <div class="container">
-    <p class="section-label">Ainda com dúvidas? Normal.</p>
-    <h2 class="section-title">Funciona para <span class="yellow">qualquer turma</span>.</h2>
-
-    <ul class="objection-list">
-      <li><strong>Trabalho com turmas difíceis</strong> → as aulas têm variações e dicas de gestão de grupo</li>
-      <li><strong>Não tenho muito material</strong> → cada aula lista os itens necessários, com opções simples</li>
-      <li><strong>Sou novo na área</strong> → estrutura didática com linguagem acessível e objetiva</li>
-      <li><strong>Já tenho alguns planos</strong> → 100 novas referências ampliam seu repertório por muito tempo</li>
-    </ul>
-
-    <!-- GARANTIA -->
-    <div class="guarantee-box">
-      <div class="g-icon">🛡️</div>
-      <div>
-        <h3>Garantia de 7 dias sem burocracia</h3>
-        <p>
-          Comprou, acessou e <strong>não ficou satisfeito</strong>? É só mandar uma mensagem em até 7 dias
-          e devolvemos <strong>100% do seu dinheiro</strong>. Sem perguntas, sem enrolação.
-          O risco é <strong>zero — e todo nosso</strong>.
-        </p>
-      </div>
-    </div>
-
-    <br>
-    <!-- CTA 5 -->
-    <a href="https://pay.cakto.com.br/vqca5rh_767670"
-       onclick="fbq('track','InitiateCheckout')"
-       class="btn-cta-sm">
-      Quero comprar com garantia →
-    </a>
-
-  </div>
-</section>
-<div class="divider"></div>
-
-
-<!-- ============================================================
-     BLOCO 8: OFERTA / PREÇO
-============================================================ -->
-<section class="price-section">
-  <div class="container">
-    <p class="section-label center">Oferta especial de lançamento</p>
-    <h2 class="section-title center">Tudo isso por quanto?</h2>
-    <p class="center" style="color:var(--muted); margin-bottom:28px;">
-      Compare o preço com o <strong>tempo que você vai economizar</strong> só na primeira semana.
-    </p>
-
-    <div class="price-box">
-      <p class="price-from">De R$49,90</p>
-      <div class="price-real"><sup>R$</sup>14<span style="font-size:0.5em">,90</span></div>
-      <p class="price-label">Pagamento único · Sem mensalidade · Acesso permanente</p>
-
-      <ul class="perks">
-        <li>100 planos de aula completos de vôlei</li>
-        <li>Objetivo + passo a passo + materiais em cada aula</li>
-        <li>Níveis iniciante, intermediário e avançado</li>
-        <li>Bônus: Mini Guia de Avaliação (PDF)</li>
-        <li>Acesso imediato após confirmação do pagamento</li>
-        <li>Garantia incondicional de 7 dias</li>
+      <ul class="oferta-inclui">
+        <li>100 aulas estruturadas passo a passo</li>
+        <li>3 níveis: iniciante, intermediário, avançado</li>
+        <li>Objetivos claros em cada aula</li>
+        <li>Progressões e variações para cada exercício</li>
+        <li>Garantia de 7 dias sem burocracia</li>
       </ul>
 
-      <!-- CTA 6 — PRINCIPAL -->
-      <a href="https://pay.cakto.com.br/vqca5rh_767670"
-         onclick="fbq('track','InitiateCheckout')"
-         class="btn-cta"
-         style="font-size:1.4rem; padding:22px 24px;">
-        🏐 GARANTIR MINHA CÓPIA POR R$14,90
-        <small>🔒 Pagamento 100% seguro · Acesso imediato · Garantia de 7 dias</small>
+      <!-- CTA PRINCIPAL -->
+      <a class="btn" href="https://pay.cakto.com.br/vqca5rh_767670"
+         onclick="fbq('track','InitiateCheckout')" target="_blank">
+        🏐 COMPRAR AGORA — R$14,90
       </a>
 
-      <p style="color:var(--muted); font-size:0.8rem; margin-top:16px; text-align:center;">
-        Após o pagamento você recebe o link de acesso no e-mail imediatamente.
+      <p style="font-size:0.75rem;color:var(--muted);margin-top:14px;">
+        🔒 Ambiente seguro · Cartão, Pix ou boleto · Acesso imediato após pagamento
       </p>
     </div>
-
   </div>
 </section>
-<div class="divider"></div>
-
-
-<!-- ============================================================
-     BLOCO 9: ESCASSEZ / URGÊNCIA + COUNTDOWN
-============================================================ -->
-<div class="urgency-bar">
-  <div class="container">
-    <h3>⏰ Promoção expira em:</h3>
-    <div class="countdown">
-      <div class="countdown-unit">
-        <div class="num" id="cd-h">23</div>
-        <div class="lbl">horas</div>
-      </div>
-      <div class="countdown-unit">
-        <div class="num" id="cd-m">59</div>
-        <div class="lbl">min</div>
-      </div>
-      <div class="countdown-unit">
-        <div class="num" id="cd-s">59</div>
-        <div class="lbl">seg</div>
-      </div>
-    </div>
-    <p>Depois volta para <strong>R$49,90</strong>. Não perca.</p>
-    <br>
-    <a href="https://pay.cakto.com.br/vqca5rh_767670"
-       onclick="fbq('track','InitiateCheckout')"
-       class="btn-cta-sm"
-       style="background:#fff; color:#09090b;">
-      Aproveitar antes que acabe →
-    </a>
-  </div>
-</div>
-
 
 <!-- ============================================================
      FOOTER
-============================================================ -->
+     Troque os links de política e contato
+     ============================================================ -->
 <footer>
-  <div class="container">
-    <p>© 2025 · 100 Aulas Prontas de Vôlei · Produto digital educacional</p>
-    <p style="margin-top:8px;">
-      <a href="#">Termos de Uso</a> ·
-      <a href="#">Política de Privacidade</a> ·
-      <a href="#">Suporte</a>
-    </p>
-    <p style="margin-top:12px; font-size:0.75rem;">
-      Este site não é afiliado ao Facebook ou ao Instagram. Após a compra, o acesso ao material é enviado imediatamente para o e-mail informado no checkout.<br>
-      Garantia de reembolso total em até 7 dias corridos após a compra.
-    </p>
-  </div>
+  <p style="margin-bottom:8px;font-size:0.88rem;color:var(--white)">
+    <strong>100 Aulas de Vôlei Prontas</strong>
+  </p>
+  <p>
+    <a href="#">Política de Privacidade</a> ·
+    <a href="#">Termos de Uso</a> ·
+    <a href="mailto:suporte@seusite.com.br">Suporte</a>
+    <!-- TROQUE o e-mail de suporte acima -->
+  </p>
+  <p style="margin-top:10px">
+    Este produto é digital. Após a confirmação do pagamento o acesso é liberado imediatamente.<br>
+    Garantia incondicional de 7 dias conforme o Código de Defesa do Consumidor.
+  </p>
 </footer>
 
-
 <!-- ============================================================
-     SCRIPTS: COUNTDOWN
-============================================================ -->
+     JAVASCRIPT — Pixel safeguard
+     ============================================================ -->
 <script>
-  /* Contador regressivo — calcula até meia-noite de domingo */
-  function getNextSunday() {
-    const now = new Date();
-    const day = now.getDay(); // 0=dom, 1=seg...6=sab
-    const daysUntilSunday = day === 0 ? 7 : 7 - day;
-    const target = new Date(now);
-    target.setDate(now.getDate() + daysUntilSunday);
-    target.setHours(23, 59, 59, 0);
-    return target;
+  /* ── Pixel safeguard: garante fbq exista mesmo sem o script carregar ── */
+  if (typeof fbq === 'undefined') {
+    window.fbq = function() {};
   }
-
-  const target = getNextSunday();
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = target - now;
-    if (diff <= 0) {
-      document.getElementById('cd-h').textContent = '00';
-      document.getElementById('cd-m').textContent = '00';
-      document.getElementById('cd-s').textContent = '00';
-      return;
-    }
-    const h = Math.floor(diff / 1000 / 3600);
-    const m = Math.floor((diff / 1000 % 3600) / 60);
-    const s = Math.floor(diff / 1000 % 60);
-    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 </script>
 
 </body>
