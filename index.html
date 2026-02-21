@@ -24,6 +24,31 @@
     <!-- ↑ Também troque o Pixel ID aqui -->
   </noscript>
 
+  <!-- ============================================================
+       UTMify — Rastreamento de UTMs e Subids
+       Mantém os parâmetros UTM em toda a jornada do usuário
+       ============================================================ -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <!-- ============================================================
+       UTMify Pixel — Pixel de rastreamento de conversões UTMify
+       ID do Pixel: 69913597cc75fb2b95901dec
+       ============================================================ -->
+  <script>
+    window.pixelId = "69913597cc75fb2b95901dec";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
   <!-- Google Fonts: Bebas Neue (headlines) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -560,7 +585,7 @@
     <!-- Depoimento herói -->
     <div class="hero-depo">
       <!-- Foto do professor depoimento -->
-      <img src="https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?w=120&h=120&fit=crop&q=85" alt="Professor Marcos" />
+      <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=120&h=120&fit=crop&q=85" alt="Professor Marcos" />
       <div>
         <p class="hero-depo-text">
           "Eu chegava às aulas sem saber o que fazer. Hoje chego com <strong>tudo estruturado</strong> e meus alunos perceberam a diferença na primeira semana."
@@ -618,10 +643,10 @@
     <h2>IMAGINE <span class="highlight">CHEGAR NA QUADRA</span><br>COM TUDO PRONTO.</h2>
     <div class="divider"></div>
 
-    <!-- Foto de vôlei em quadra: professor + alunos treinando -->
+    <!-- Foto de vôlei em quadra: atleta em ataque/bloqueio -->
     <img class="transform-img"
-         src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=400&fit=crop&q=90"
-         alt="Professor de vôlei com alunos na quadra" />
+         src="https://images.unsplash.com/photo-1551958219-acbc595b09f7?w=800&h=400&fit=crop&q=90"
+         alt="Atletas de vôlei em jogo indoor" />
 
     <p class="transform-text">
       Com as <strong>100 aulas prontas</strong>, você abre o documento, vê o objetivo da aula, o aquecimento, os exercícios por fase e o encerramento. Cada aula foi pensada do zero até o final, com progressões e linguagem simples.
@@ -852,7 +877,7 @@
   <p>
     <a href="#">Política de Privacidade</a> ·
     <a href="#">Termos de Uso</a> ·
-    <a href="mailto:suporte@seusite.com.br">Suporte</a>
+    <a href="/cdn-cgi/l/email-protection#ef9c9a9f809d9b8aaf9c8a9a9c869b8ac18c8082c18d9d">Suporte</a>
     <!-- TROQUE o e-mail de suporte acima -->
   </p>
   <p style="margin-top:10px">
@@ -864,12 +889,5 @@
 <!-- ============================================================
      JAVASCRIPT — Pixel safeguard
      ============================================================ -->
-<script>
-  /* ── Pixel safeguard: garante fbq exista mesmo sem o script carregar ── */
-  if (typeof fbq === 'undefined') {
-    window.fbq = function() {};
-  }
-</script>
-
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  /* ── Pixel safeguard: gar
